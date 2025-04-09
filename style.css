@@ -1,0 +1,40 @@
+body {
+    font-family: Georgia, serif;
+    background-color: #fefbf4;
+    color: #2e2e2e;
+    margin: 0;
+    padding: 20px;
+}
+header {
+    background-color: #e8dcbf;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #d3bfa6;
+}
+.hero {
+    display: block;
+    margin: 20px auto;
+    max-width: 300px;
+    border-radius: 8px;
+}
+.intro {
+    font-style: italic;
+    text-align: center;
+    margin: 20px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+a {
+    text-decoration: none;
+    color: #6e3b3b;
+}
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stile.css">
+  <title>L'Oracolo</title>
+</head>
+<body style="background-color: black; color: white; background-image: url('assets/immagini/sfondo_cripta.png'); background-size: cover; background-position: center;">
+  <audio autoplay loop id="bg-music">
+    <source src="assets/audio/enigma.mp3" type="audio/mpeg">
+  </audio>
+  <div class="centro">
+    <img src="assets/immagini/oracolo_uomo.png" alt="L'Oracolo" style="width: 200px; margin-bottom: 20px;">
+    <h2>Scrivi la tua domanda.<br>L'Oracolo ascolta nel silenzio.</h2>
+    <textarea id="domanda" placeholder="Cosa vuoi sapere?" rows="4" cols="50"></textarea>
+    <br>
+    <button onclick="interrogaOracolo()">Interroga l'Oracolo</button>
+    <div id="risposta" style="margin-top: 20px; font-style: italic;"></div>
+    <a href="#" class="pulsante" id="prosegui" style="display:none; margin-top: 30px;">Prosegui nel rito</a>
+  </div>
+  <script>
+    function interrogaOracolo() {
+      const domanda = document.getElementById('domanda').value;
+      const rispostaBox = document.getElementById('risposta');
+      const prosegui = document.getElementById('prosegui');
+
+      if (!domanda.trim()) {
+        rispostaBox.innerText = "L'Oracolo tace dinanzi al vuoto.";
+        return;
+      }
+
+      rispostaBox.innerText = "✨ L'Oracolo sta ascoltando... ✨";
+      prosegui.style.display = "none";
+
+      setTimeout(() => {
+        const risposteMystiche = [
+          "Nel sogno, ciò che chiedi ti è già stato sussurrato.",
+          "Il tempo non risponde, ma ti osserva.",
+          "Cammina nel buio, e ascolta il passo che non è tuo.",
+          "La risposta è celata dietro ciò che temi di scoprire.",
+          "Solo chi accetta il dubbio può ricevere la verità."
+        ];
+        const random = Math.floor(Math.random() * risposteMystiche.length);
+        rispostaBox.innerText = risposteMystiche[random];
+        prosegui.style.display = "inline-block";
+        prosegui.href = "index.html";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

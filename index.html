@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Cerchio di Kaor</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      background-image: url('sigillo.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top center;
+      color: #e0dede;
+      font-family: 'Georgia', serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-top: 55vh;
+      margin-bottom: 1em;
+      padding: 0 1em;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 8px;
+    }
+
+    .button {
+      margin-bottom: 3em;
+      padding: 1em 2em;
+      font-size: 1.2em;
+      background-color: #2b2b2b;
+      color: #f7e58d;
+      border: 2px solid #f7e58d;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .button:hover {
+      background-color: #f7e58d;
+      color: #2b2b2b;
+    }
+
+    audio {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>"Chi vi entra si perde. Solo chi si perde, può vedere."</h1>
+  <a href="soglia.html" class="button">Prosegui</a>
+  <audio controls autoplay loop>
+    <source src="musica-sadness.mp3" type="audio/mpeg">
+    Il tuo browser non supporta l'elemento audio.
+  </audio>
+</body>
+</html>

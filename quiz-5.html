@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5. Una parola sussurrata nel buio. Come rispondi?</title>
+  <style>
+    body {
+      background-color: black;
+      color: #f0f0f0;
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 2em;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 1em;
+    }
+    .button {
+      display: block;
+      margin: 0.5em auto;
+      padding: 1em 2em;
+      font-size: 1.1em;
+      background-color: #2b2b2b;
+      color: #f7e58d;
+      border: 2px solid #f7e58d;
+      text-decoration: none;
+      width: fit-content;
+    }
+    .button:hover {
+      background-color: #f7e58d;
+      color: #2b2b2b;
+    }
+    audio {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>5. Una parola sussurrata nel buio. Come rispondi?</h1>
+  <a class="button" href="quiz-result.html?ans=guardiano">Con il silenzio</a>
+<a class="button" href="quiz-result.html?ans=portavoce">Con una visione</a>
+<a class="button" href="quiz-result.html?ans=muratore">Con un disegno</a>
+<a class="button" href="quiz-result.html?ans=none">Con paura</a>
+  <audio controls autoplay loop>
+    <source src="musica-sadness.mp3" type="audio/mpeg" />
+  </audio>
+</body>
+</html>

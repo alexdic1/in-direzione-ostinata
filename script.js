@@ -1,1 +1,0 @@
-console.log("Sito del rito mistico caricato");

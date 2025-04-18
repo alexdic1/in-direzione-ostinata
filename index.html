@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Oracolo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: url('assets/immagini/indovinello-sfondo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Cinzel', serif;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .oracolo-img {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .dialogo {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 1.5rem;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .domanda {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #fdd835;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      background: #111;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background-color: #fdd835;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e6c200;
+    }
+
+    #risposta-oracolo {
+      margin-top: 1rem;
+      color: #dcdcdc;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="assets/audio/musica.mp3" type="audio/mpeg">
+    Il tuo browser non supporta l'audio HTML5.
+  </audio>
+
+  <img src="assets/immagini/oracolo_uomo.png" alt="Oracolo" class="oracolo-img">
+
+  <div class="dialogo">
+    <div class="domanda" id="domanda">Scrivi qualcosa all'Oracolo...</div>
+    <input type="text" id="inputUtente" placeholder="Scrivi la tua risposta...">
+    <br>
+    <button onclick="interrogaOracolo()">Invia</button>
+    <div id="risposta-oracolo"></div>
+  </div>
+
+  <script>
+    const rispostePredefinite = [
+      "Ogni tua parola è un'eco del dubbio che ti abita.",
+      "Forse la domanda giusta non è quella che hai fatto.",
+      "L’oscurità che temi è solo l’ombra della verità che rifiuti.",
+      "Hai cercato fuori ciò che giace in te da sempre.",
+      "Non tutti quelli che ascoltano capiscono. Tu… stai iniziando a capire?",
+      "La tua voce trema. Ma almeno parli. È già qualcosa.",
+      "Taci troppo spesso. E quando parli, menti a te stesso?",
+      "Il Maestro non si mostra a chi non è pronto a guardarsi."
+    ];
+
+    function interrogaOracolo() {
+      const input = document.getElementById('inputUtente').value.trim();
+      const rispostaBox = document.getElementById('risposta-oracolo');
+
+      if (input.length === 0) {
+        rispostaBox.innerText = "L'Oracolo tace davanti al silenzio vuoto.";
+        return;
+      }
+
+      const indice = Math.floor(Math.random() * rispostePredefinite.length);
+      rispostaBox.innerText = rispostePredefinite[indice];
+    }
+  </script>
+</body>
+</html>
